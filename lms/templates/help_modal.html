@@ -60,14 +60,14 @@ discussion_link = get_discussion_link(course) if course else None
     <form id="feedback_form" class="feedback_form" method="post" data-remote="true" action="/submit_feedback">
       <div id="feedback_error" class="modal-form-error" tabindex="-1"></div>
 % if not user.is_authenticated():
-      <label data-field="name" for="feedback_form_name">${_('Name*')}</label>
+      <label data-field="name" for="feedback_form_name">${_('Name')}*</label>
       <input name="name" type="text" id="feedback_form_name" aria-required="true">
-      <label data-field="email" for="feedback_form_email">${_('E-mail*')}</label>
+      <label data-field="email" for="feedback_form_email">${_('E-mail')}*</label>
       <input name="email" type="text" id="feedback_form_email" aria-required="true">
 % endif
-      <label data-field="subject" for="feedback_form_subject">${_('Briefly describe your issue*')}</label>
+      <label data-field="subject" for="feedback_form_subject">${_('Briefly describe your issue')}*</label>
       <input name="subject" type="text" id="feedback_form_subject" aria-required="true">
-      <label data-field="details" for="feedback_form_details">${_('Tell us the details*')}
+      <label data-field="details" for="feedback_form_details">${_('Tell us the details')}*
 <span class="tip">${_('Include error messages, steps which lead to the issue, etc')}</span></label>
       <textarea name="details" id="feedback_form_details" aria-required="true"></textarea>
       <input name="issue_type" type="hidden">
@@ -75,7 +75,7 @@ discussion_link = get_discussion_link(course) if course else None
       <input name="course_id" type="hidden" value="${course.id | h}">
 % endif
       <div class="submit">
-        <input name="submit" type="submit" value="Submit" id="feedback_submit">
+        <input name="submit" type="submit" value="${_('Submit')}" id="feedback_submit">
       </div>
     </form>
   </div>
@@ -145,7 +145,7 @@ discussion_link = get_discussion_link(course) if course else None
         $("#lean_overlay").click(onModalClose);
         $("#help_wrapper .close-modal").focus();
     });
-    showFeedback = function(event, issue_type, title, subject_label, details_label) {
+    showFeedback = function(event, issue_type, title, subject_label, details_label, details_tip) {
         $("#help_wrapper").css("display", "none");
         $("#feedback_form input[name='issue_type']").val(issue_type);
         $("#feedback_form_wrapper").css("display", "block");
@@ -170,8 +170,8 @@ discussion_link = get_discussion_link(course) if course else None
             event,
             "${_('problem')}",
             "${_('Report a Problem')}",
-            "${_('Brief description of the problem*')}",
-            "${_('Details of the problem you are encountering*')}" + "<span class='tip'>" +
+            "${_('Brief description of the problem')}" + "*",
+            "${_('Details of the problem you are encountering')}" + "*" + "<span class='tip'>" +
               "${_('Include error messages, steps which lead to the issue, etc.')}" + "</span>"
         );
     });
@@ -180,8 +180,8 @@ discussion_link = get_discussion_link(course) if course else None
             event,
             "${_('suggestion')}",
             "${_('Make a Suggestion')}",
-            "${_('Brief description of your suggestion*')}",
-            "${_('Details*')}"
+            "${_('Brief description of your suggestion')}" + "*",
+            "${_('Details')}" + "*"
         );
     });
     $("#feedback_link_question").click(function(event) {
@@ -189,8 +189,8 @@ discussion_link = get_discussion_link(course) if course else None
             event,
             "${_('question')}",
             "${_('Ask a Question')}",
-            "${_('Brief summary of your question*')}",
-            "${_('Details*')}"
+            "${_('Brief summary of your question')}" + "*",
+            "${_('Details')}" + "*"
         );
     });
     $("#feedback_form").submit(function() {
@@ -227,7 +227,7 @@ discussion_link = get_discussion_link(course) if course else None
 % else:
             // If no email is configured, we can't do much other than
             // ask the user to try again later
-            htmlStr += "${_(' Please try again later.')}";
+            htmlStr += "${_('Please try again later.')}";
 % endif
             $("#feedback_error").html(htmlStr).stop().css("display", "block");
 % if settings.FEEDBACK_SUBMISSION_EMAIL:
