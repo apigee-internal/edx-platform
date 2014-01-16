@@ -454,12 +454,12 @@ IGNORABLE_404_ENDS = ('favicon.ico')
 
 # Platform Email
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-DEFAULT_FROM_EMAIL = 'registration@example.com'
-DEFAULT_FEEDBACK_EMAIL = 'feedback@example.com'
-SERVER_EMAIL = 'devops@example.com'
-TECH_SUPPORT_EMAIL = 'technical@example.com'
-CONTACT_EMAIL = 'info@example.com'
-BUGS_EMAIL = 'bugs@example.com'
+DEFAULT_FROM_EMAIL = 'learn@apigee.com'
+DEFAULT_FEEDBACK_EMAIL = 'learn@apigee.com'
+SERVER_EMAIL = 'learn@apigee.com'
+TECH_SUPPORT_EMAIL = 'support@apigee.com'
+CONTACT_EMAIL = 'learn@apigee.com'
+BUGS_EMAIL = 'support@apigee.com'
 ADMINS = ()
 MANAGERS = ADMINS
 

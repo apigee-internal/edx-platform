@@ -70,7 +70,9 @@ DATABASES = {
 }
 
 LMS_BASE = "localhost:8000"
-FEATURES['PREVIEW_LMS_BASE'] = "localhost:8000"
+FEATURES['PREVIEW_LMS_BASE'] = "localhost:8020"
+# 8000
+
 
 REPOS = {
     'edx4edx': {

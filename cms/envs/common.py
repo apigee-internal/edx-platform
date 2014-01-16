@@ -202,9 +202,9 @@ EMAIL_PORT = 25
 EMAIL_USE_TLS = False
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
-DEFAULT_FROM_EMAIL = 'registration@example.com'
-DEFAULT_FEEDBACK_EMAIL = 'feedback@example.com'
-SERVER_EMAIL = 'devops@example.com'
+DEFAULT_FROM_EMAIL = 'learn@apigee.com'
+DEFAULT_FEEDBACK_EMAIL = 'learn@apigee.com'
+SERVER_EMAIL = 'learn@apigee.com'
 ADMINS = ()
 MANAGERS = ADMINS
 

@@ -139,7 +139,7 @@ VIRTUAL_UNIVERSITIES = []
 # Organization that contain other organizations
 META_UNIVERSITIES = {'UTx': ['UTAustinX']}
 
-COMMENTS_SERVICE_KEY = "PUT_YOUR_API_KEY_HERE"
+COMMENTS_SERVICE_KEY = "QoUGgaASQMHMRB"
 
 ############################## Course static files ##########################
 if os.path.isdir(DATA_DIR):
